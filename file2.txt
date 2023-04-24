@@ -1,1 +1,1 @@
-This is my 2nd file in git.
+This is my file in git.
