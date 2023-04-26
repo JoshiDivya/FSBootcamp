@@ -1,35 +1,43 @@
 class Car
 {
-    public string model {get;set;} 
-    public string make {get;set;} 
-    public int currentSpeed {get; private set;} 
-    public bool engineRunning {get; private set;} 
+    public string model { get; set; }
+    public string make { get; set; }
+    public int currentSpeed { get; private set; }
+    public bool engineRunning { get; private set; }
 
-    private void startEngine()
+    public void startEngine()
     {
-       engineRunning = true;
+        engineRunning = true;
     }
-    private void stopEngine()
+    public void stopEngine()
     {
         engineRunning = false;
     }
-    private void accelerate()
+    public void accelerate()
     {
-       currentSpeed += 10;
-       if(currentSpeed> 200)
-       currentSpeed = 200;
+
+        if (!engineRunning)
+        {
+            throw new InvalidOperationException("acceletor not possible because of startEngine is not called");
+        }
+
+        const int maxSpeed = 200;
+        currentSpeed += 10;
+
+        if (currentSpeed > maxSpeed)
+            currentSpeed = maxSpeed;
 
     }
-    private void decelerate()
+    public void decelerate()
     {
-       currentSpeed -= 10;      
+        currentSpeed -= 10;
+
+        if (currentSpeed < 0)
+        {
+            currentSpeed = 0;
+        }
     }
 
-    // Car car = new Car();
-    // car.make = "Volvo";
-    //    car.currentSpeed= 100;
-    //    car.model = "Volvo cc";
-    //    car.engineRunning = true;
 
 
 

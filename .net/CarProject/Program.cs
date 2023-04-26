@@ -6,6 +6,11 @@ Car myCar= new Car();
 myCar.make = "Toyota";
 myCar.model = "Corola";
 
+myCar.startEngine();
+myCar.accelerate();
+myCar.accelerate();
+
+
 
 
 
