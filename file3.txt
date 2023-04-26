@@ -1,2 +1,0 @@
-This is my 3rd file in git.
-added one text here.
